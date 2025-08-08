@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guide Git pour le Vibe Coding</title>
+    <link rel="icon" href="mon_logo.png" type="image/png">
     <style>
         /* --- Styles Généraux --- */
         :root {
+            --header-font: 'Poppins', sans-serif;
+            --body-font: 'Inter', sans-serif;
+        }
+
+        body.dark-mode {
             --background-color: #121212;
             --text-color: #e0e0e0;
             --primary-color: #bb86fc;
@@ -14,9 +20,18 @@
             --card-background: #1e1e1e;
             --code-background: #2c2c2c;
             --border-color: #333333;
-            --header-font: 'Poppins', sans-serif;
-            --body-font: 'Inter', sans-serif;
         }
+
+        body.light-mode {
+            --background-color: #f5f5f5;
+            --text-color: #333333;
+            --primary-color: #6200ee;
+            --secondary-color: #03dac6;
+            --card-background: #ffffff;
+            --code-background: #e0e0e0;
+            --border-color: #dddddd;
+        }
+
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap');
 
         body {
@@ -29,6 +44,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            transition: background-color 0.3s, color 0.3s;
         }
         .container {
             max-width: 800px;
@@ -59,8 +75,8 @@
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out, background-color 0.3s;
         }
         .command-card:hover {
             transform: translateY(-5px);
@@ -79,14 +95,14 @@
         }
         code {
             font-family: 'Fira Code', 'Courier New', monospace;
-            color: #e0e0e0;
+            color: var(--text-color);
         }
         .copy-btn {
             position: absolute;
             top: 10px;
             right: 10px;
             background-color: var(--primary-color);
-            color: black;
+            color: white;
             border: none;
             padding: 5px 10px;
             border-radius: 5px;
@@ -102,9 +118,27 @@
             font-style: italic;
             color: #777;
         }
+        #theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            z-index: 1000;
+        }
+        .dark-mode .sun-icon {
+            display: none;
+        }
+        .light-mode .moon-icon {
+            display: none;
+        }
     </style>
 </head>
-<body>
+<body class="dark-mode">
+    <div id="theme-toggle">
+        <span class="sun-icon">☀️</span>
+        <span class="moon-icon">🌙</span>
+    </div>
     <div class="container">
         <header>
             <h1>🚀 Guide Git pour le Vibe Coding</h1>
@@ -173,9 +207,32 @@
                 <pre><code>git branch -d nouvelle-fonctionnalite</code><button class="copy-btn" onclick="copyToClipboard(this)">Copier</button></pre>
             </div>
         </section>
+
+        <section id="collaboration">
+            <h2>Collaboration : Travailler à plusieurs</h2>
+            <p>Lorsque vous travaillez en équipe ou avec des dépôts distants (comme sur GitHub), ces commandes sont essentielles pour synchroniser votre travail.</p>
+            
+            <div class="command-card">
+                <h3>git fetch</h3>
+                <p>Récupère les dernières modifications depuis le dépôt distant sans les fusionner dans votre branche de travail. Cela vous permet de voir ce que les autres ont fait avant d'intégrer les changements. C'est une pratique sûre pour inspecter les changements entrants.</p>
+                <pre><code>git fetch</code><button class="copy-btn" onclick="copyToClipboard(this)">Copier</button></pre>
+            </div>
+
+            <div class="command-card">
+                <h3>git pull</h3>
+                <p>Combine `git fetch` et `git merge` en une seule commande. Elle récupère les modifications du dépôt distant et les fusionne immédiatement dans votre branche actuelle. C'est le moyen le plus direct de se mettre à jour avec le travail de l'équipe.</p>
+                <pre><code>git pull</code><button class="copy-btn" onclick="copyToClipboard(this)">Copier</button></pre>
+            </div>
+
+            <div class="command-card">
+                <h3>Pull Request (ou "PR")</h3>
+                <p>Ce n'est pas une commande, mais un mécanisme central sur les plateformes comme GitHub ou GitLab. Après avoir poussé vos modifications sur une branche distante, vous ouvrez une Pull Request pour proposer que vos changements soient intégrés (fusionnés) à une autre branche (souvent `main`). C'est un moment clé pour la revue de code par les pairs avant l'intégration finale.</p>
+            </div>
+        </section>
         
         <footer>
             <p>Créé avec ❤️ pour aider les développeurs à démarrer.</p>
+            <p>&copy; 2025 MultiBrasServices</p>
         </footer>
     </div>
 
@@ -194,6 +251,26 @@
                 console.error('Erreur de copie : ', err);
             });
         }
+
+        const themeToggle = document.getElementById('theme-toggle');
+
+        function setTheme(theme) {
+            document.body.className = theme;
+            localStorage.setItem('theme', theme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.body.classList.contains('dark-mode') ? 'light-mode' : 'dark-mode';
+            setTheme(currentTheme);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'dark-mode';
+            setTheme(savedTheme);
+        });
     </script>
+    <div style="position: fixed; bottom: 10px; right: 10px; font-size: 0.8em; color: #777;">
+        v1.1 - 08/08/2025
+    </div>
 </body>
 </html>
