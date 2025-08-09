@@ -18,4 +18,6 @@ Ce projet est un simple guide des commandes Git les plus utiles pour travailler 
 
 ## Comment utiliser
 
+Vous pouvez consulter le guide directement sur le site web : [https://multibrasservices.github.io/GitGuide/](https://multibrasservices.github.io/GitGuide/)
+
 Ouvrez le fichier `index.html` dans votre navigateur pour voir le guide.
