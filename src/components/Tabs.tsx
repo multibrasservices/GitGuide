@@ -12,12 +12,13 @@ export const Tabs = ({ tabs, activeTabId, onTabChange }: TabsProps) => {
 
   return (
     <div>
-      <div style={{
+      <div className="tabs-container" style={{
         display: 'flex',
         gap: '10px',
         marginBottom: '30px',
         borderBottom: '2px solid var(--border-color)',
-        paddingBottom: '10px'
+        paddingBottom: '10px',
+        flexWrap: 'wrap'
       }}>
         {tabs.map((tab) => (
           <button

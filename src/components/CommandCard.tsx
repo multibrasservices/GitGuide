@@ -41,7 +41,7 @@ export const CommandCard = ({ command }: CommandCardProps) => {
       backgroundColor: 'var(--card-background)',
       border: '1px solid var(--border-color)',
       borderRadius: '8px',
-      padding: '20px',
+      padding: 'clamp(15px, 4vw, 20px)',
       marginBottom: '15px',
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
       transition: 'transform 0.2s ease-in-out, background-color 0.3s'

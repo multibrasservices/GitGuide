@@ -71,11 +71,82 @@ body {
 @media (max-width: 768px) {
   .main-content {
     margin-left: 0;
-    padding: 20px;
+    padding: 15px;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
   }
   
   body {
     padding: 0;
+    font-size: 14px;
+  }
+  
+  /* Header responsive */
+  header h1 {
+    font-size: 1.8em !important;
+  }
+  
+  header p {
+    font-size: 0.95em !important;
+  }
+  
+  /* Tabs responsive */
+  .tabs-container {
+    flex-wrap: wrap;
+    gap: 5px !important;
+  }
+  
+  .tabs-container button {
+    padding: 8px 15px !important;
+    font-size: 0.9em !important;
+  }
+  
+  /* Command cards responsive */
+  .command-card {
+    padding: 15px !important;
+  }
+  
+  .command-card h3 {
+    font-size: 1.1em !important;
+  }
+  
+  .command-card pre {
+    padding: 10px !important;
+    font-size: 0.85em !important;
+  }
+  
+  .command-card .copy-btn {
+    padding: 4px 8px !important;
+    font-size: 0.8em !important;
+    top: 5px !important;
+    right: 5px !important;
+  }
+  
+  /* Theme toggle responsive */
+  #theme-toggle {
+    top: 15px !important;
+    right: 15px !important;
+    font-size: 1.3rem !important;
+  }
+  
+  /* Footer responsive */
+  footer {
+    font-size: 0.9em;
+  }
+  
+  footer div {
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    margin-top: 20px;
+  }
+  
+  /* Sections responsive */
+  section h2 {
+    font-size: 1.5em !important;
   }
 }
 

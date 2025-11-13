@@ -13,7 +13,8 @@ export const Section = ({ section }: SectionProps) => {
         color: 'var(--secondary-color)',
         borderBottom: '2px solid var(--secondary-color)',
         paddingBottom: '5px',
-        marginBottom: '20px'
+        marginBottom: '20px',
+        fontSize: 'clamp(1.5em, 4vw, 2em)'
       }}>
         {section.title}
       </h2>
