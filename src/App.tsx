@@ -3,6 +3,7 @@ import { Theme, Tab } from './types';
 import { getStoredTheme, setStoredTheme, applyTheme } from './utils/theme';
 import { gitSections } from './data/commands';
 import { gitInitWorkflow } from './data/git-init-workflow';
+import { githubActionsSection } from './data/github-actions';
 import { vimSections } from './data/vim-commands';
 import { ThemeToggle } from './components/ThemeToggle';
 import { Header } from './components/Header';
@@ -17,7 +18,7 @@ const tabs: Tab[] = [
   {
     id: 'git',
     label: 'Git',
-    sections: [...gitSections, gitInitWorkflow]
+    sections: [...gitSections, gitInitWorkflow, githubActionsSection]
   },
   {
     id: 'vim',

@@ -50,7 +50,17 @@ pnpm preview
 - `git branch -d` - Supprimer une branche
 - `git fetch` - Récupérer les modifications distantes
 - `git pull` - Récupérer et fusionner
+- `git log` - Voir l'historique des commits
 - Workflow d'initialisation avec dépôt GitHub existant
+
+### GitHub Actions
+- Création et structure de workflows
+- Déclencheurs (push, pull_request, etc.)
+- Variables d'environnement et secrets
+- Matrice de builds pour tests multiples
+- Partage d'artefacts entre jobs
+- Exécution conditionnelle
+- Mise en cache pour accélérer les builds
 
 ### Vim
 - Mode commande (`:`)
@@ -63,8 +73,10 @@ pnpm preview
 - 🌓 Mode sombre/clair avec sauvegarde des préférences
 - 📋 Copie en un clic des commandes
 - 📑 Navigation par onglets (Git, Vim)
-- 📱 Interface responsive
+- 📱 Interface responsive (mobile-first)
 - 🎨 Design moderne et épuré
+- 🚀 Sidebar repliable avec navigation par sections
+- 📊 Exemples de sortie pour certaines commandes
 
 ## Structure du projet
 
@@ -76,6 +88,13 @@ src/
 ├── utils/         # Utilitaires
 └── styles/        # Styles CSS
 ```
+
+## Déploiement
+
+Ce projet est déployé automatiquement sur GitHub Pages via GitHub Actions. Chaque push sur la branche `main` déclenche un nouveau déploiement.
+
+- **URL du site** : https://multibrasservices.github.io/GitGuide/
+- **Workflow** : `.github/workflows/deploy.yml`
 
 ## Version
 
