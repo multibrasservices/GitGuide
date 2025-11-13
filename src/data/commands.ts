@@ -81,6 +81,20 @@ Date:   Sat Nov 11 09:15:00 2025 +0100
     title: 'Le Bouton "Oups" : Revenir en Arrière',
     commands: [
       {
+        id: 'git-restore-file',
+        title: 'git restore <fichier>',
+        description: 'Vous avez fait une modification dans un fichier mais vous voulez l\'annuler ? Cette commande restaure le fichier à son état du dernier commit, annulant vos changements locaux. C\'est l\'équivalent d\'un "ctrl+z" pour vos modifications non "stagées".',
+        command: 'git restore src/App.tsx',
+        references: []
+      },
+      {
+        id: 'git-restore-staged',
+        title: 'git restore --staged <fichier>',
+        description: 'Vous avez utilisé `git add` sur un fichier par erreur ? Cette commande le retire de la zone de "staging" sans pour autant annuler les modifications que vous avez faites dans le fichier. Le fichier retourne à l\'état "modifié" mais non "stagé".',
+        command: 'git restore --staged src/App.tsx',
+        references: []
+      },
+      {
         id: 'git-reset-hard',
         title: 'git reset --hard',
         description: 'L\'IA a généré un code catastrophique ? Pas de panique. Cette commande vous ramène exactement à votre dernier commit, effaçant toutes les modifications non sauvegardées. C\'est votre retour à un état stable en un clin d\'œil.',
