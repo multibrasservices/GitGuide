@@ -98,7 +98,7 @@ Ce projet est déployé automatiquement sur GitHub Pages via GitHub Actions. Cha
 
 ## Version
 
-v13.11.25
+v07.12.25
 
 ## Accédez à la page 
 
