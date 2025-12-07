@@ -15,7 +15,7 @@ export const Footer = () => {
         fontSize: '0.8em',
         color: '#777'
       }}>
-        v13.11.25
+        v07.12.25
       </div>
     </footer>
   );
